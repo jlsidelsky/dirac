@@ -13,7 +13,7 @@ A modern single-page React + TypeScript application for creating hierarchical 3D
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm (recommended) or npm/yarn
 
 ### Installation
@@ -61,6 +61,7 @@ The application is configured to deploy to GitHub Pages at `https://<username>.g
 
 1. **Create a GitHub repository** named `threejs` (or your preferred name)
 2. **Push your code** to the repository:
+
    ```bash
    git remote add origin https://github.com/<username>/threejs.git
    git branch -M main
@@ -68,6 +69,7 @@ The application is configured to deploy to GitHub Pages at `https://<username>.g
    ```
 
 3. **Enable GitHub Pages**:
+
    - Go to your repository Settings → Pages
    - Under "Source", select "GitHub Actions"
    - The workflow will automatically deploy on every push to `main`
@@ -81,6 +83,7 @@ The application is configured to deploy to GitHub Pages at `https://<username>.g
 ### Automatic Deployment
 
 The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that:
+
 - Automatically builds the project on every push to `main`
 - Deploys to GitHub Pages
 - Uses pnpm for dependency management
@@ -112,13 +115,15 @@ pnpm build
 
 ### Advanced Features
 
-- **Keyboard Shortcuts**: 
+- **Keyboard Shortcuts**:
+
   - `Delete` / `Backspace`: Delete selected item
   - `Ctrl+Z` / `Cmd+Z`: Undo
   - `Ctrl+Shift+Z` / `Ctrl+Y` / `Cmd+Shift+Z` / `Cmd+Y`: Redo
   - `Cmd+K` / `Ctrl+K`: Open command palette
 
 - **Smart Property Editing**:
+
   - Drag-to-adjust on X/Y/Z labels (0.1 units per pixel, 0.01 with Shift)
   - Linked fields for maintaining ratios across axes
   - Rotation in degrees with automatic -180° to 180° wrapping
@@ -126,6 +131,7 @@ pnpm build
   - Formatted number display (always 2 decimal places)
 
 - **Visual Enhancements**:
+
   - Soft shadows with configurable opacity
   - Edge rendering on all meshes (green when selected)
   - Prominent 3D axes helper
@@ -151,12 +157,13 @@ The application uses **React Context + useReducer** for state management, provid
 - Efficient re-rendering with React's built-in optimization
 
 **State Structure:**
+
 ```typescript
 interface ModelState {
-  model: Model;              // Hierarchical node tree
+  model: Model; // Hierarchical node tree
   selection: SelectionState; // Current selection
-  history: ModelState[];     // Undo/redo history
-  historyIndex: number;      // Current position in history
+  history: ModelState[]; // Undo/redo history
+  historyIndex: number; // Current position in history
 }
 ```
 
@@ -213,6 +220,7 @@ The application uses a hierarchical tree structure:
 - **Selection**: Synchronized between tree view and 3D view
 
 All nodes support:
+
 - Transform (position, rotation, scale)
 - Visibility toggle
 - Rename operation
@@ -222,27 +230,32 @@ All nodes support:
 ## 📚 Technology Stack
 
 ### Core Framework
+
 - **React 19.1.1** - UI framework with latest features
 - **TypeScript 5.9.3** - Type safety and developer experience
 - **Vite 7.1.7** - Fast build tool and dev server
 
 ### 3D Graphics
+
 - **Three.js 0.181.0** - Core 3D graphics library
 - **@react-three/fiber 9.4.0** - React renderer for Three.js
 - **@react-three/drei 10.7.6** - Useful helpers (OrbitControls, Grid, etc.)
 
 ### UI Components
+
 - **shadcn/ui** - Accessible component library built on Radix UI
 - **Tailwind CSS 3.4.0** - Utility-first CSS framework
 - **Lucide React** - Icon library
 - **cmdk** - Command palette component
 
 ### Drag and Drop
+
 - **@dnd-kit/core** - Modern drag-and-drop library
 - **@dnd-kit/sortable** - Sortable list functionality
 - **@dnd-kit/utilities** - Utility functions
 
 ### State Management
+
 - **React Context API** - Built-in state management
 - **useReducer** - Reducer pattern for complex state
 
@@ -275,6 +288,7 @@ Property inputs support drag-to-adjust on labels:
 ### Number Formatting
 
 All numeric inputs:
+
 - Display exactly 2 decimal places (e.g., `2.90`, `0.00`)
 - Support drag-to-adjust on labels
 - Auto-select all text on focus
@@ -283,6 +297,7 @@ All numeric inputs:
 ### Color System
 
 Primitives support custom colors:
+
 - **Default**: White (#ffffff)
 - **Selection**: Green tint overlay with emissive glow
 - **Edges**: Green when selected, dark gray otherwise
