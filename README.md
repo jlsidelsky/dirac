@@ -2,6 +2,8 @@
 
 A modern single-page React + TypeScript application for creating hierarchical 3D models from geometric primitives. Features an intuitive tree-based interface with real-time 3D visualization powered by Three.js, comprehensive property editing, and full undo/redo support.
 
+🌐 **Live Demo**: [https://jlsidelsky.github.io/threejs/](https://jlsidelsky.github.io/threejs/)
+
 ![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript)
 ![Three.js](https://img.shields.io/badge/Three.js-0.181.0-000000?logo=three.js)
@@ -34,6 +36,8 @@ pnpm dev
 ```
 
 The application will be available at `http://localhost:5173` (or the port shown in your terminal).
+
+**Or view the live site**: [https://jlsidelsky.github.io/threejs/](https://jlsidelsky.github.io/threejs/)
 
 ### Building for Production
 
